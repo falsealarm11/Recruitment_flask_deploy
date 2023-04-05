@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login">
+        <h1>Predict Recruitment Status</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+            <input type="text" name="Gender" placeholder="Enter Gender:- Male:1, Female:0" />
+            <input type="text" name="Python_experience" placeholder="Yes:1, No:0" />
+            <input type="text" name="Experience" placeholder="Range: 0-4" />
+            <input type="text" name="Education" placeholder="Graduate: 1, Not Graduate: 0 " />
+            <input type="text" name="Internship" placeholder="Yes:1, No:0" />
+            <input type="text" name="Score" placeholder="Enter a value" />
+            <input type="text" name="Salary" placeholder="Enter your salary" /> 
+            <input type="text" name="Offer history" placeholder="Yes:1, No:0" />
+            <input type="text" name="Location" placeholder="'Urban': 1,'Rural':2, 'Semiurban':3" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <h3><br>{{ prediction_text }}</h3>
+
+    </div>
+</body>
+</html>
